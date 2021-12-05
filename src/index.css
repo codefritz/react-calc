@@ -7,6 +7,7 @@ html {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #DEDEDE;
 }
 
 *, *::before, *::after {
@@ -15,14 +16,20 @@ html {
   box-sizing: inherit;
 }
 
+h1 {
+  text-align: center;
+  margin: 20px;
+}
+
 .calculator {
-  border: 1px solid #ccc;
+  border: 2px solid #111;
   border-radius: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
+  background-color: #efefef;
 }
 
 .calc-field {
@@ -60,15 +67,18 @@ button:hover {
 
 .operator {
   color: #337cac;
+  font-weight: 600;
 }
 
 .result {
-  background-color: #5353ED;
+  background-color: #1393CD;
+  grid-area: 2 / 4 / 6 / 5;
+  height: 100%;
 }
 
 .button-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 20px;
-  grid-column-gap: 20px;
+  grid-gap: 20px;
+  padding: 20px;
 }

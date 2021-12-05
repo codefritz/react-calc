@@ -10,7 +10,6 @@ function CaclulatorField({calcField}) {
   );
 }
 
-
 function CalculatorNumberButton(props) {
   return (
     <button 
@@ -25,14 +24,14 @@ function CalculatorNumberButton(props) {
 
 function App() {
   
-  const [calcField, setCalcField] = useState("");
+  const [calcField, setCalcField] = useState("0");
 
   return (
     <div className="calculator">
-        <h1>CODI-1</h1>
+        <h1>CODI-MASTER #1</h1>
           <CaclulatorField calcField={calcField} />
           <div className="button-container">
-          {["*","/","+","-","."].map((elm, ix) => (
+          {["*","/","+","-"].map((elm, ix) => (
               <CalculatorNumberButton 
                 value={elm} 
                 setter={setCalcField} 
@@ -41,13 +40,15 @@ function App() {
                 />
             )
           )}
-          {[...Array(10)].map((elm, ix) => (
-              <CalculatorNumberButton value={ix} setter={setCalcField} field={calcField}/>
-            )
-          )}
+          {[...Array(9)].map((elm, ix) => (
+              <CalculatorNumberButton value={ix + 1} setter={setCalcField} field={calcField}/>
+              )
+              )}
+          <CalculatorNumberButton value="0" setter={setCalcField} field={calcField}/>
+          <CalculatorNumberButton value="." setter={setCalcField} field={calcField}/>
           <button 
             className="calc-button all-clear"
-            onClick={() => setCalcField("")}>AC</button>
+            onClick={() => setCalcField("0")}>AC</button>
           <button 
             className="calc-button result"
             onClick={() => setCalcField(eval(calcField))}>=</button>
