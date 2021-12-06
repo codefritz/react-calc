@@ -1,4 +1,6 @@
-
+/*
+ * Calculator layout inspired by: https://freshman.tech/css-grid-calculator/
+ */
 html {
   font-size: 62.5%;
   box-sizing: border-box;

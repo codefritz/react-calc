@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {appendValue} from './functions';
+import {appendValue, calculate} from './functions';
 import { useState } from 'react';
 
 
@@ -30,7 +30,7 @@ function App() {
     <div className="calculator">
         <h1>CODI-MASTER #1</h1>
           <CaclulatorField calcField={calcField} />
-          <div className="button-container">
+          <div className="button-container" id="button-container">
           {["*","/","+","-"].map((elm, ix) => (
               <CalculatorNumberButton 
                 value={elm} 
@@ -51,7 +51,7 @@ function App() {
             onClick={() => setCalcField("0")}>AC</button>
           <button 
             className="calc-button result"
-            onClick={() => setCalcField(eval(calcField))}>=</button>
+            onClick={() => setCalcField(calculate(calcField))}>=</button>
         </div>
     </div>
   );
