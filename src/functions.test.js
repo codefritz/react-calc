@@ -10,3 +10,7 @@ test("Append 2 values value", () => {
 test("Calculate basic sum", () => {
     expect(calculate("2+2")).toBe(4);
 })
+
+test("Calculate incorrect (Okta) input should show err", () => {
+    expect(calculate("2+02")).toBe("Err");
+})

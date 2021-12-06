@@ -10,5 +10,9 @@ export function appendValue(field, value) {
 
 
 export function calculate(value) {
-    return eval(value);
+    try {
+        return eval(value);
+    } catch (e) {
+        return "Err"
+    }
 }
