@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {appendValue, calculate} from './functions';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function CaclulatorField({calcField}) {
@@ -24,11 +24,15 @@ function CalculatorNumberButton(props) {
 
 function App() {
   
+
+  const title = "Codi Master #1"
+  useEffect(() => {document.title = title}, []);
+
   const [calcField, setCalcField] = useState("0");
 
   return (
     <div className="calculator">
-        <h1>CODI-MASTER #1</h1>
+        <h1>{title.toUpperCase()}</h1>
           <CaclulatorField calcField={calcField} />
           <div className="button-container" id="button-container">
           {["*","/","+","-"].map((elm, ix) => (
