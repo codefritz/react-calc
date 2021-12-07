@@ -23,7 +23,6 @@ function CalculatorNumberButton(props) {
 
 
 function App() {
-  
 
   const title = "Codi Master #1"
   useEffect(() => {document.title = title}, []);
